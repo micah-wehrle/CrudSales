@@ -1,0 +1,28 @@
+.wide-card {
+  width: 100%;
+  left: 0;
+  // height: 80vh;
+  position: relative;
+}
+
+.content-wrapper {
+  position: fixed;
+  top: 30vh;
+  left: 10vw;
+}
+
+.card-group-1 {
+  position: relative;
+  background-color: var(--color-2);
+}
+.content-group-1 {
+  color: var(--color-4);
+}
+
+.card-group-2 {
+  background-color: var(--color-3);
+}
+.content-group-2 {
+  color: var(--color-1);
+
+}

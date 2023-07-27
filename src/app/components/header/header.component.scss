@@ -1,0 +1,26 @@
+.header-bar {
+  width: 100%;
+  position: fixed;
+  background-color: var(--color-1);
+  top: 0;
+  left: 0;
+  // border-bottom: 2px solid rgb(0, 0, 50);
+  z-index: 9999
+}
+
+.header-backer {
+  width: 100%;
+}
+
+.header-textbox-big {
+  height:100%;
+  width: 100%;
+  color: white;
+  
+}
+
+.header-text-big {
+  color: var(--color-4);
+  height: 100%;
+  font-size: clamp(16px, 5vh, 24px);
+}
