@@ -26,16 +26,19 @@
 </app-uni-wide-data-card>
 <app-uni-wide-data-card [styleGroup]="1">
   <div class="row">
-    <div class="col d-flex justify-content-center">
+    <div class="col d-flex justify-content-center align-middle">
       <div>
         <h4>Try it out!</h4>
         <p>It's honestly staggering that you're still here. Did you not read what we just wrote? I guess add your own garbage here:</p>
       </div>
     </div>
     <div class="col d-flex justify-content-center">
-      <div>
-        Put the form here okay?
+      <div class="sales-box">
+        <app-sales-entry></app-sales-entry>
       </div>
     </div>
   </div>
+</app-uni-wide-data-card>
+<app-uni-wide-data-card [styleGroup]="2">
+  <app-database-entries></app-database-entries>
 </app-uni-wide-data-card>

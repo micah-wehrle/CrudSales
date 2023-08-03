@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-uni-wide-data-card',
@@ -7,17 +7,17 @@ import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, View
   styleUrls: ['./uni-wide-data-card.component.scss'],
   animations: [
     trigger('popIntoView', [
-      state('pop-in', style({ transform: 'translateX(0)', opacity: 1 })),
-      state('pop-out', style({ transform: 'translateX(50px)', opacity: 0 })),
+      state('pop-in', style({ transform: 'translateX(0)', visibility: 'visible', opacity: 1 })), 
+      state('pop-out', style({ transform: 'translateX(50px)', visibility: 'hidden', opacity: 0 })), // need visibility so it can't be interacted with, but opacity can be smoothly transitioned between for fading effect.
       transition('pop-in => pop-out', animate('200ms ease-out')),
       transition('pop-out => pop-in', animate('200ms ease-in')),
     ]),
   ]
 })
 export class UniWideDataCardComponent implements OnInit, AfterViewInit {
-  @Input('styleGroup') styleGroup!: number;
-  @ViewChild('card') cardElementRef!: ElementRef;
-  @ViewChild('content') contentElementRef!: ElementRef;
+  @Input('styleGroup') styleGroup: number;
+  @ViewChild('card') cardElementRef: ElementRef;
+  @ViewChild('content') contentElementRef: ElementRef;
 
   public showCardContent: boolean = false;
   public cardStyle: {[key: string]: string} = {'height': '1000px'}; // Need to have placeholder height as will be set after the content size is determined in ngAfterViewInit

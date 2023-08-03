@@ -1,7 +1,5 @@
 <div [ngStyle]="cardStyle" [ngClass]="['wide-card', 'card-group-' + styleGroup]" #card>
 </div>
-<div [ngClass]="['content-wrapper', 'content-group-' + styleGroup]"[@popIntoView]="showCardContent ? 'pop-in' : 'pop-out'" #content>
-  <div class="container">
-    <ng-content></ng-content>
-  </div>
+<div [ngClass]="['content-wrapper', 'content-group-' + styleGroup, 'd-flex', 'justify-content-center']" [@popIntoView]="showCardContent ? 'pop-in' : 'pop-out'" #content>
+  <ng-content></ng-content>
 </div>

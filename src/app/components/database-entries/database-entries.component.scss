@@ -1,0 +1,43 @@
+.big-arrow {
+  font-size: 5rem;
+  background-color: var(--color-5);
+  color: var(--color-2);
+  padding: 0 1rem 1rem 1rem;
+  align-items: center;
+  vertical-align: middle;
+  border-radius: 1.7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  cursor:pointer;
+  
+  transition: 0.2s;
+  &:hover {
+    background-color: var(--color-4);
+    color: var(--color-1);
+  }
+}
+
+.sales-box-data {
+  border-radius: 1rem;
+  color: var(--color-4);
+  background-color: var(--color-2);
+  width: 20rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.no-data-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-3);
+  font-style: italic;
+}
+
+.no-data-text {
+  text-align: center;
+}
+
+span {
+  color: var(--color-3);
+}

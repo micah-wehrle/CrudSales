@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  public dbEntriesVisibility: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setDbEntriesVisible(isVisible: boolean): void {
+    this.dbEntriesVisibility = isVisible;
   }
 
 }

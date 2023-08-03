@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" #salesForm="ngForm">
+  <div class="form-group my-1">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="usersName" required [disabled]="waitingOnDB">
+  </div>
+  <div class="form-group my-1">
+    <label for="cost">Cost</label>
+    <input type="text" class="form-control" id="cost" name="cost" [(ngModel)]="itemCost" required [disabled]="waitingOnDB">
+  </div>
+  <div class="form-group my-1">
+    <label for="desc">Description</label>
+    <input type="text" class="form-control" id="desc" name="desc" [(ngModel)]="itemDescription" required [disabled]="waitingOnDB">
+  </div>
+  <button type="submit" class="btn btn-secondary mt-3" [disabled]="!salesForm.form.valid || waitingOnDB">Submit</button>
+</form>

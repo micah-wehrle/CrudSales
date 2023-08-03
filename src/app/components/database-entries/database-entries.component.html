@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col">
+    <div class="big-arrow" (click)="onPrevEntry()">
+      &lsaquo;
+    </div>
+  </div>
+  <div class="col">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="sales-box-data">
+            <div *ngIf="!databaseIsPopulated()" class="no-data-wrapper">
+              <div class="no-data-text">No data found. . .</div>
+            </div>
+            <div [ngStyle]="{ 'visibility': databaseIsPopulated() ? 'inherit' : 'hidden' }">
+              <span>Name:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;{{ entryArray[currentEntry-1]?.name }} <br>
+              <span>Cost:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;{{ entryArray[currentEntry-1]?.cost }} <br>
+              <span>Description:</span><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;{{ entryArray[currentEntry-1]?.desc }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">
+          {{ totalEntries > 0 ? currentEntry : 0 }} / {{ totalEntries }}
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-sm btn-danger" (click)="onDelete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="big-arrow" (click)="onNextEntry()">
+      &rsaquo;
+    </div>
+  </div>
+</div>

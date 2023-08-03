@@ -10,17 +10,13 @@
 
 .header-backer {
   width: 100%;
-}
-
-.header-textbox-big {
-  height:100%;
-  width: 100%;
-  color: white;
-  
+  background-color: var(--color-1);
 }
 
 .header-text-big {
+  position: relative;
   color: var(--color-4);
-  height: 100%;
-  font-size: clamp(16px, 5vh, 24px);
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   public headerStartingHeight: number;
   public headerMinimumHeight: number;
   public headerPxHeight: string;
+  public headerFontPx: string;
   public windowHeight: number;
 
   constructor() {
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
     this.headerMinimumHeight = Math.round(this.windowHeight * 0.1);
 
     this.headerPxHeight = `${this.headerStartingHeight}px`;
+    this.headerFontPx = `${Math.round(this.headerStartingHeight*0.3)}px`;
   }
 
   ngOnInit(): void {
@@ -26,7 +28,9 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll')
   private onWindowScroll(): void {
     const adjustedHeight = this.headerStartingHeight-window.scrollY;
-    this.headerPxHeight = `${Math.max(adjustedHeight , this.headerMinimumHeight )}px`;
+    const heightValue = Math.max(adjustedHeight , this.headerMinimumHeight )
+    this.headerPxHeight = `${heightValue}px`;
+    this.headerFontPx = `${Math.round(heightValue*0.3)}px`;
   }
 
 }
